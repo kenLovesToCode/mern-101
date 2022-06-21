@@ -11,7 +11,7 @@ const protect = asyncHandler(async (req, res, next) => {
     try {
       token = req.headers.authorization.split(" ")[1]; //[Bearer, tokenkfdalkjfksja]
 
-      //verify token
+      //verify token and get response from generateToken() function from userController
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
       //get user from token
